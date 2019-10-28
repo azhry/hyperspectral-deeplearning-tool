@@ -370,6 +370,8 @@ def show_results(results, vis, label_values=None, agregated=False):
     text += str(cm)
     text += "---\n"
 
+    
+
     if agregated:
         text += ("Accuracy: {:.03f} +- {:.03f}\n".format(np.mean(accuracies),
                                                          np.std(accuracies)))
@@ -383,6 +385,18 @@ def show_results(results, vis, label_values=None, agregated=False):
                                      F1_scores_std):
             text += "\t{}: {:.03f} +- {:.03f}\n".format(label, score, std)
     else:
+        print('NON AGREGATE')
+        vis.bar(np.nan_to_num(F1scores), opts={
+            'rownames': label_values,
+            'xlabel': 'Class',
+            'ylabel': 'Accuracy',
+            'width': 750,
+            'height': 500,
+            'marginbottom': 250,
+            'marginleft': 150,
+            'marginright': 150,
+            'title': 'Hasil klasifikasi dataset Indian Pines menggunakan 1D CNN'
+        })
         for label, score in zip(label_values, F1scores):
             text += "\t{}: {:.03f}\n".format(label, score)
     text += "---\n"
