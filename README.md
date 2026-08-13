@@ -1,3 +1,5 @@
+
+
 # DeepHyperX
 
 A Python tool to perform deep learning experiments on various hyperspectral datasets.
@@ -63,22 +65,22 @@ An example dataset folder has the following structure:
 ```
 Datasets
 ├── Botswana
-│   ├── Botswana_gt.mat
-│   └── Botswana.mat
+│   ├── Botswana_gt.mat
+│   └── Botswana.mat
 ├── DFC2018_HSI
-│   ├── 2018_IEEE_GRSS_DFC_GT_TR.tif
-│   ├── 2018_IEEE_GRSS_DFC_HSI_TR
-│   ├── 2018_IEEE_GRSS_DFC_HSI_TR.aux.xml
-│   ├── 2018_IEEE_GRSS_DFC_HSI_TR.HDR
+│   ├── 2018_IEEE_GRSS_DFC_GT_TR.tif
+│   ├── 2018_IEEE_GRSS_DFC_HSI_TR
+│   ├── 2018_IEEE_GRSS_DFC_HSI_TR.aux.xml
+│   ├── 2018_IEEE_GRSS_DFC_HSI_TR.HDR
 ├── IndianPines
-│   ├── Indian_pines_corrected.mat
-│   ├── Indian_pines_gt.mat
+│   ├── Indian_pines_corrected.mat
+│   ├── Indian_pines_gt.mat
 ├── KSC
-│   ├── KSC_gt.mat
-│   └── KSC.mat
+│   ├── KSC_gt.mat
+│   └── KSC.mat
 ├── PaviaC
-│   ├── Pavia_gt.mat
-│   └── Pavia.mat
+│   ├── Pavia_gt.mat
+│   └── Pavia.mat
 └── PaviaU
     ├── PaviaU_gt.mat
     └── PaviaU.mat
@@ -120,7 +122,7 @@ Then, run the script `main.py`.
 The most useful arguments are:
   * `--model` to specify the model (e.g. 'svm', 'nn', 'hamida', 'lee', 'chen', 'li'),
   * `--dataset` to specify which dataset to use (e.g. 'PaviaC', 'PaviaU', 'IndianPines', 'KSC', 'Botswana'),
-  * the `--cuda` switch to run the neural nets on GPU. The tool fallbacks on CPU if this switch is not specified.
+  * the `--cuda` switch to run the neural nets on GPU. The tool falls back on CPU if this switch is not specified.
 
 There are more parameters that can be used to control more finely the behaviour of the tool. See `python main.py -h` for more information.
 
@@ -131,4 +133,3 @@ Examples:
     This runs on GPU a basic 4-layers fully connected neural network on the Pavia University dataset, using 10% of the samples for training.
   * `python main.py --model hamida --dataset PaviaU --training_sample 0.5 --patch_size 7 --epoch 50 --cuda`
     This runs on GPU the 3D CNN from Hamida et al. on the Pavia University dataset with a patch size of 7, using 50% of the samples for training and optimizing for 50 epochs.
-
